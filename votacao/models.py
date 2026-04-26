@@ -18,3 +18,11 @@ class Opcao(models.Model):
 
  def __str__ (self):
   return self.opcao_texto
+
+class Comentario(models.Model):
+ questao = models.ForeignKey(Questao, on_delete=models.CASCADE)
+ comentario_texto = models.CharField(max_length=200)
+ autor = models.CharField(max_length=200)
+
+ def __str__ (self):
+  return self.comentario_texto
